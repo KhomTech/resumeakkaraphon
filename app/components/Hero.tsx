@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { FileText, Mail, MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { FileText, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 import Image from 'next/image';
 import RealTimeClock from './RealTimeClock';

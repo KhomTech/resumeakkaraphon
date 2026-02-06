@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Clock, Globe } from 'lucide-react';
 
 export default function RealTimeClock() {
     const [time, setTime] = useState<Date | null>(null);
