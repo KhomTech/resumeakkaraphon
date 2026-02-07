@@ -9,12 +9,8 @@ import type { NextConfig } from "next";
 */
 
 const nextConfig: NextConfig = {
-  // Enable Static Export for GitHub Pages
-  output: 'export',
-
-  // Allow external images from CDN & Disable optimization for static export
+  // Allow external images from CDN
   images: {
-    unoptimized: true, // Required for GitHub Pages
     remotePatterns: [
       {
         protocol: 'https',
