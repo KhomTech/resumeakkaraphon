@@ -120,29 +120,27 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                             )}
 
                             {/* Native Object Embed - Better Performance than Iframe for PDF */}
-                            <object
-                                data="/resume.pdf"
-                                type="application/pdf"
-                                className="w-full h-full block"
+                            {/* Native Iframe - Better for Mobile Scroll/Zoom than Object */}
+                            <iframe
+                                src="/resume.pdf"
+                                className="w-full h-full block rounded-lg bg-white"
+                                title="Resume PDF"
+                                style={{ border: 'none' }}
                                 onLoad={() => setIsLoading(false)}
-                                onError={() => setIsLoading(false)}
-                            >
-                                {/* Fallback for browsers (mainly mobile) that don't inline PDFs */}
-                                <div className="flex flex-col items-center justify-center h-full text-center p-8">
-                                    <p className="text-[var(--text-secondary)] mb-4">
-                                        This browser doesn't support inline PDFs.
-                                    </p>
-                                    <a
-                                        href="/resume.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent-red)] text-white rounded-lg font-medium"
-                                    >
-                                        <Download size={18} />
-                                        Download PDF
-                                    </a>
-                                </div>
-                            </object>
+                            />
+
+                            {/* Mobile Overlay: Force Open in New Tab if Iframe interaction is poor */}
+                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden">
+                                <a
+                                    href="/resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 px-6 py-3 bg-[var(--accent-red)] text-white font-bold rounded-full shadow-xl animate-bounce"
+                                >
+                                    <ExternalLink size={18} />
+                                    Tap to Zoom/Scroll Full PDF
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 </>

@@ -82,9 +82,7 @@ button {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-color);
-  will-change: transform, backdrop-filter;
-  transform: translateZ(0);
-  /* Force GPU layer */
+  /* Removed aggressive will-change to prevent memory overhead */
 }
 
 /* Ultra Smooth Gradient Text */

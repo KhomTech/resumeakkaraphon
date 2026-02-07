@@ -45,9 +45,10 @@ export default function Hero({ onOpenResume }: HeroProps) {
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
             {/* Refined Background Gradients */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--accent-red)] opacity-[0.03] rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500 opacity-[0.02] rounded-full blur-[150px] translate-y-1/2 -translate-x-1/3" />
+            {/* Refined Background Gradients (Optimized: No CSS Blur) */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle,rgba(220,38,38,0.08)_0%,rgba(0,0,0,0)_70%)]" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-[radial-gradient(circle,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_70%)]" />
             </div>
 
             <div className="container-custom relative z-10">
