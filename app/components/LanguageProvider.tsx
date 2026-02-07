@@ -34,7 +34,7 @@ const translations = {
             description: 'Third-year Mathematics & Computer Science student passionate about Fintech. Dedicated to building full-stack solutions that solve real problems.',
             viewResume: 'View Resume',
             contactMe: 'Contact Me',
-            availability: 'Available for Internship: May 2026 - Mar 2027',
+            availability: 'Internship Availability: (11 Months) 5 May 2026 - March 2027',
         },
         // Featured Project
         featured: {
@@ -159,7 +159,7 @@ const translations = {
             description: 'นักศึกษาชั้นปีที่ 3 สาขาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ ที่หลงใหลในโลก Fintech และการพัฒนา Software มุ่งมั่นสร้าง Solutions ที่ใช้งานได้จริงและทรงพลัง',
             viewResume: 'ดูเรซูเม่',
             contactMe: 'ติดต่อร่วมงาน',
-            availability: 'พร้อมเริ่มฝึกงาน: พ.ค. 2569 - มี.ค. 2570',
+            availability: 'พร้อมเริ่มฝึกงาน (11 เดือน): 5 พ.ค. 2569 - มี.ค. 2570',
         },
         // Featured Project
         featured: {
