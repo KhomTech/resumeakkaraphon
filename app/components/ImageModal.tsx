@@ -20,13 +20,21 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
         if (isOpen) setScale(1);
     }, [isOpen]);
 
-    // Handle Escape key
+    // Handle Escape key and Scroll Lock
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose();
         };
-        if (isOpen) window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
+
+        if (isOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'hidden'; // Lock body scroll
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = ''; // Unlock body scroll
+        };
     }, [isOpen, onClose]);
 
     const handleZoomIn = (e: React.MouseEvent) => {
@@ -93,7 +101,7 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
                     </motion.div>
 
                     {/* Image Container */}
-                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-10 pointer-events-none">
+                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -102,7 +110,7 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
                             className="relative w-full h-full flex items-center justify-center pointer-events-auto"
                         >
                             <div
-                                className="relative transition-transform duration-200 ease-linear origin-center will-change-transform"
+                                className="relative transition-transform duration-200 ease-linear origin-center will-change-transform flex items-center justify-center"
                                 style={{ transform: `scale(${scale})` }}
                             >
                                 <img
@@ -111,6 +119,17 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
                                     className="w-auto h-auto max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl select-none"
                                     onClick={(e) => e.stopPropagation()}
                                     draggable={false}
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = 'none';
+                                        // Show fallback text or icon if image fails
+                                        const parent = e.currentTarget.parentElement;
+                                        if (parent) {
+                                            const fallback = document.createElement('div');
+                                            fallback.className = 'text-white text-2xl font-bold opacity-50 flex flex-col items-center gap-4';
+                                            fallback.innerHTML = '<span>Image Not Found</span><span class="text-sm font-normal">Please upload profile.png</span>';
+                                            parent.appendChild(fallback);
+                                        }
+                                    }}
                                 />
                             </div>
                         </motion.div>
