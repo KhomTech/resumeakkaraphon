@@ -88,16 +88,17 @@ const translations = {
             },
             smarthealth: {
                 title: 'System Analyst & UX/UI',
-                company: 'Maharat Nakhon Ratchasima Hospital',
+                company: 'Smart Health Service System (Maharat Hospital)',
                 period: '2024',
-                description: 'Consulted directly with physicians to address data loss issues in the existing Legacy System. Designed a Centralized Platform workflow and user-friendly UX/UI using Figma.',
+                description: 'Spearheaded the digital transformation of a hospital legacy system into a modern Centralized Platform.',
                 achievements: [
-                    'Delivered professional SRS and DFD specifications',
-                    'Designed Centralized Platform workflow',
+                    'Requirement: Consulted directly with physicians to address data loss issues in the existing Legacy System',
+                    'Solution Design: Designed a Centralized Platform workflow and user-friendly UX/UI using Figma',
+                    'Documentation: Delivered professional SRS and DFD specifications (Visio) for stakeholder approval'
                 ],
                 impact: 'UX/UI',
                 impactLabel: 'Design',
-                stack: 'System Analysis | UX/UI | Figma'
+                stack: 'Visio | Figma | System Analysis | DFD/SRS'
             },
             shoes: {
                 title: 'Full-Stack Developer',
@@ -213,16 +214,17 @@ const translations = {
             },
             smarthealth: {
                 title: 'System Analyst & UX/UI',
-                company: 'โรงพยาบาลมหาราชนครราชสีมา',
-                period: '2567',
-                description: 'Consult โดยตรงกับแพทย์เพื่อแก้ปัญหาข้อมูลสูญหายในระบบ Legacy เดิม ออกแบบ Workflow แพลตฟอร์มกลางและ UX/UI ที่ใช้งานง่ายด้วย Figma',
+                company: 'Smart Health Service System (Maharat Hospital)',
+                period: '2024',
+                description: 'Spearheaded the digital transformation of a hospital legacy system into a modern Centralized Platform.',
                 achievements: [
-                    'ส่งมอบเอกสาร SRS และ DFD ระดับมืออาชีพ',
-                    'ออกแบบหน้าจอ UX/UI ที่เป็นมิตรกับผู้ใช้',
+                    'Requirement: Consulted directly with physicians to address data loss issues in the existing Legacy System',
+                    'Solution Design: Designed a Centralized Platform workflow and user-friendly UX/UI using Figma',
+                    'Documentation: Delivered professional SRS and DFD specifications (Visio) for stakeholder approval'
                 ],
                 impact: 'UX/UI',
                 impactLabel: 'Design',
-                stack: 'System Analysis | UX/UI | Figma'
+                stack: 'Visio | Figma | System Analysis | DFD/SRS'
             },
             shoes: {
                 title: 'Full-Stack Developer',
