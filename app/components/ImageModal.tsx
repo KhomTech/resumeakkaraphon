@@ -100,34 +100,42 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
                         </button>
                     </motion.div>
 
-                    {/* Image Container */}
-                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
+                    {/* Image Container - Strictly Centered & Sized */}
+                    <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none p-0">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                            className="relative w-full h-full flex items-center justify-center pointer-events-auto"
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="w-full h-full flex items-center justify-center pointer-events-auto"
                         >
                             <div
-                                className="relative transition-transform duration-200 ease-linear origin-center will-change-transform flex items-center justify-center"
+                                className="relative flex items-center justify-center will-change-transform"
                                 style={{ transform: `scale(${scale})` }}
                             >
                                 <img
                                     src={imageSrc}
                                     alt={altText}
-                                    className="w-auto h-auto max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl select-none"
+                                    className="object-contain rounded-lg shadow-2xl select-none bg-black/5"
+                                    style={{
+                                        maxWidth: '80vw',
+                                        maxHeight: '80vh',
+                                        width: 'auto',
+                                        height: 'auto'
+                                    }}
                                     onClick={(e) => e.stopPropagation()}
                                     draggable={false}
                                     onError={(e) => {
                                         e.currentTarget.style.display = 'none';
-                                        // Show fallback text or icon if image fails
                                         const parent = e.currentTarget.parentElement;
                                         if (parent) {
-                                            const fallback = document.createElement('div');
-                                            fallback.className = 'text-white text-2xl font-bold opacity-50 flex flex-col items-center gap-4';
-                                            fallback.innerHTML = '<span>Image Not Found</span><span class="text-sm font-normal">Please upload profile.png</span>';
-                                            parent.appendChild(fallback);
+                                            parent.innerHTML = `
+                                                <div class="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-xl border border-neutral-800 text-white">
+                                                    <span class="text-4xl mb-4">🖼️</span>
+                                                    <span class="text-lg font-bold">Image Not Found</span>
+                                                    <span class="text-sm opacity-60 mt-1">Check profile.png</span>
+                                                </div>
+                                            `;
                                         }
                                     }}
                                 />
