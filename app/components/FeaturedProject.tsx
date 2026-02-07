@@ -210,7 +210,7 @@ export default function FeaturedProject() {
                         }
                     ].map((proj, i) => {
                         // Access translations dynamically
-                        // @ts-expect-error
+                        // @ts-expect-error: Dynamic key access for translations
                         const p = t.experience[proj.key] || {};
                         const isLink = !!proj.link;
 

@@ -24,9 +24,9 @@ const nextConfig: NextConfig = {
     ],
   },
   // Improve performance
-  experimental: {
-    optimizeCss: true,
-  },
+  // experimental: {
+  //   optimizeCss: true,
+  // },
 };
 
 export default nextConfig;
