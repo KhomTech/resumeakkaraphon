@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedProject from './components/FeaturedProject';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
-import ResumeModal from './components/ResumeModal';
 
 /*
   ==============================
@@ -40,7 +39,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section - Landing area with name and CTAs */}
-      <Hero onOpenResume={() => setIsResumeOpen(true)} />
+      <Hero />
 
       {/* Featured Project - MMRRDiKub Showcase */}
       <FeaturedProject />
@@ -53,12 +52,6 @@ export default function Home() {
 
       {/* Contact / Footer Section */}
       <Contact />
-
-      {/* Resume Modal - Opens on "View Resume" click */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
     </main>
   );
 }
