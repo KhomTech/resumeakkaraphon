@@ -163,23 +163,23 @@ const translations = {
         },
         // Featured Project
         featured: {
-            badge: 'FEATURED PROJECT',
+            badge: 'โปรเจกต์ไฮไลท์',
             title: 'MMRRDiKub',
-            subtitle: 'Trade Risk Management Platform',
-            description: 'A personal solution built to solve my own trading struggles: emotional decisions, lack of planning, and poor risk management.',
-            whyTitle: 'The Story ("Why I Built This")',
-            why: 'I created this to fix my own real-life problems. I used to trade based on emotions, with no clear plan or calculated risk. I applied my tech skills to build a disciplined system that forces me to trade with logic and mathematics, not feelings.',
-            featuresTitle: 'How it Solves the Problem',
+            subtitle: 'แพลตฟอร์มบริหารความเสี่ยงสำหรับเทรดเดอร์',
+            description: 'ระบบที่สร้างขึ้นเพื่อแก้ปัญหาการเทรดของตัวผมเอง: ลดการใช้อารมณ์, วางแผนให้ชัดเจน และคุมความเสี่ยงด้วยคณิตศาสตร์',
+            whyTitle: 'จุดเริ่มต้น ("ระบบนี้เกิดขึ้นได้อย่างไร")',
+            why: 'ผมสร้างโปรเจกต์นี้เพื่อแก้ปัญหาของตัวเองครับ เมื่อก่อนผมเทรดด้วย "อารมณ์" ไม่มีแผนที่ชัดเจน และขาดการคำนวณความเสี่ยง ผมจึงนำทักษะ Tech มาสร้างระบบที่มีวินัย บังคับให้ตัวเองเทรดด้วย "ตรรกะและคณิตศาสตร์" แทนความรู้สึก',
+            featuresTitle: 'ระบบนี้แก้ปัญหาอย่างไร?',
             features: [
-                'Risk Control: Enforces strict Risk% and Position Sizing to prevent emotional overtrading.',
-                'Trade Planning: AI Score validates every setup (R:R) before execution, ensuring a mathematical edge.',
-                'Automated Journaling: Records every trade logic & PnL (Binance API) to analyze performance without bias.'
+                'Risk Control: บังคับคุมความเสี่ยง (Risk%) และคำนวณ Position Sizing ทุกครั้ง เพื่อป้องกันการเทรดเกินตัว (Overtrading)',
+                'Trade Planning: ใช้ AI Score ประเมินความคุ้มค่า (R:R) ก่อนเข้าออเดอร์ เพื่อให้มั่นใจว่าเทรดด้วยความได้เปรียบทางสถิติ',
+                'Automated Journaling: บันทึกตรรกะการเทรดและ PnL จริง (Binance API) อัตโนมัติ เพื่อวิเคราะห์ผลงานแบบไม่เข้าข้างตัวเอง'
             ],
-            techTitle: 'Robust Fintech Architecture',
-            techDetail: 'Engineered for reliability using Golang (Backend), Next.js (Frontend), and PostgreSQL (Database). Fully containerized with Docker.',
+            techTitle: 'สถาปัตยกรรม Fintech ที่แข็งแกร่ง',
+            techDetail: 'ออกแบบระบบให้เสถียรและรวดเร็วด้วย Golang (Backend), Next.js (Frontend) และเก็บข้อมูลด้วย PostgreSQL (Database) โดยรันทุกอย่างบน Docker',
             stack: 'Golang | Next.js | PostgreSQL | Docker',
-            visitSite: 'Visit Live Site',
-            viewDetails: 'View Details',
+            visitSite: 'ลองใช้งานจริง',
+            viewDetails: 'ดูเบื้องหลังการพัฒนา',
         },
         // Experience
         experience: {
