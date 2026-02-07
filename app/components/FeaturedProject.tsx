@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Layers, Server, Database, Container, BarChart2, Mail, Copy, Check } from 'lucide-react';
+import { ExternalLink, Github, Layers, Code, Database, Cpu, Mail, BarChart2, Copy, Check, Server, Container } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from './LanguageProvider';
 import Image from 'next/image';
@@ -138,17 +138,24 @@ export default function FeaturedProject() {
                                     </div>
                                 </div>
 
-                                <motion.a
-                                    href="https://mmrrdikub.xyz"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.02, y: -2 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white gradient-red shadow-lg shadow-red-500/20 transition-all hover:shadow-red-500/40"
-                                >
-                                    <ExternalLink size={20} />
-                                    {t.featured.visitSite}
-                                </motion.a>
+                                <div className="flex flex-wrap gap-4">
+                                    <a
+                                        href="https://mmrrdikub.xyz/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent-red)] text-white font-medium rounded-lg hover:bg-red-700 transition-colors shadow-lg shadow-red-900/20"
+                                    >
+                                        {t.featured.visitSite}
+                                        <ExternalLink size={18} />
+                                    </a>
+                                    <a
+                                        href="mailto:akkaraphon7tech@gmail.com?subject=Interested in MMRRDiKub Project"
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card-bg)] text-[var(--text-primary)] border border-[var(--text-secondary)]/20 font-medium rounded-lg hover:bg-[var(--glass)] transition-all hover:scale-105"
+                                    >
+                                        <Mail size={18} />
+                                        {t.featured.contactParams}
+                                    </a>
+                                </div>
                             </div>
 
                             {/* 5-Image Grid (Bento) */}

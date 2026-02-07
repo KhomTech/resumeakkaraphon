@@ -47,14 +47,15 @@ const translations = {
             featuresTitle: 'How it Solves the Problem',
             features: [
                 'Risk Control: Enforces strict Risk% and Position Sizing to prevent emotional overtrading.',
-                'Trade Planning: AI Score validates every setup (R:R) before execution, ensuring a mathematical edge.',
-                'Automated Journaling: Records every trade logic & PnL (Binance API) to analyze performance without bias.'
+                'Trade Planning: AI Score validates every setup (R:R) before execution.',
+                'Real-time Price Feed: Fetches live crypto prices via Binance API for accurate market analysis.'
             ],
             techTitle: 'Robust Fintech Architecture',
             techDetail: 'Engineered for reliability using Golang (Backend), Next.js (Frontend), and PostgreSQL (Database). Fully containerized with Docker.',
             stack: 'Golang | Next.js | PostgreSQL | Docker',
             visitSite: 'Visit Live Site',
             viewDetails: 'View Details',
+            contactParams: 'Discuss this Project',
         },
         // Experience
         experience: {
@@ -172,15 +173,16 @@ const translations = {
             why: 'ผมสร้างโปรเจกต์นี้เพื่อแก้ปัญหาของตัวเองครับ เมื่อก่อนผมเทรดด้วย "อารมณ์" ไม่มีแผนที่ชัดเจน และขาดการคำนวณความเสี่ยง ผมจึงนำทักษะ Tech มาสร้างระบบที่มีวินัย บังคับให้ตัวเองเทรดด้วย "ตรรกะและคณิตศาสตร์" แทนความรู้สึก',
             featuresTitle: 'ระบบนี้แก้ปัญหาอย่างไร?',
             features: [
-                'Risk Control: บังคับคุมความเสี่ยง (Risk%) และคำนวณ Position Sizing ทุกครั้ง เพื่อป้องกันการเทรดเกินตัว (Overtrading)',
-                'Trade Planning: ใช้ AI Score ประเมินความคุ้มค่า (R:R) ก่อนเข้าออเดอร์ เพื่อให้มั่นใจว่าเทรดด้วยความได้เปรียบทางสถิติ',
-                'Automated Journaling: บันทึกตรรกะการเทรดและ PnL จริง (Binance API) อัตโนมัติ เพื่อวิเคราะห์ผลงานแบบไม่เข้าข้างตัวเอง'
+                'Risk Control: บังคับคุมความเสี่ยง (Risk%) และคำนวณ Position Sizing ทุกครั้ง ป้องกันการเทรดเกินตัว (Overtrading)',
+                'Trade Planning: AI Score ประเมินความคุ้มค่า (R:R) ของทุก Setup ก่อนตัดสินใจเข้าออเดอร์',
+                'Real-time Price Feed: เชื่อมต่อ Binance API ดึงราคาเหรียญจริงมาแสดงผลเพื่อประกอบการวางแผน (Live Market Data)'
             ],
             techTitle: 'สถาปัตยกรรม Fintech ที่แข็งแกร่ง',
             techDetail: 'ออกแบบระบบให้เสถียรและรวดเร็วด้วย Golang (Backend), Next.js (Frontend) และเก็บข้อมูลด้วย PostgreSQL (Database) โดยรันทุกอย่างบน Docker',
             stack: 'Golang | Next.js | PostgreSQL | Docker',
             visitSite: 'ลองใช้งานจริง',
             viewDetails: 'ดูเบื้องหลังการพัฒนา',
+            contactParams: 'สนใจโปรเจกต์นี้',
         },
         // Experience
         experience: {
