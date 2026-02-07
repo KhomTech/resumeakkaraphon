@@ -51,7 +51,8 @@ export default function FeaturedProject() {
     return (
         <section id="projects" className="py-24 md:py-32 relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[var(--accent-red)] opacity-[0.02] blur-[120px] pointer-events-none" />
+            {/* Background Decor (Optimized: No CSS Blur) */}
+            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[radial-gradient(circle,rgba(220,38,38,0.05)_0%,rgba(0,0,0,0)_70%)] pointer-events-none" />
 
             <div className="container-custom relative z-10">
 
