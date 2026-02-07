@@ -15,10 +15,9 @@ import RealTimeClock from './RealTimeClock';
 */
 
 interface HeroProps {
-    onOpenResume: () => void;
 }
 
-export default function Hero({ onOpenResume }: HeroProps) {
+export default function Hero({ }: HeroProps) {
     const { t } = useLanguage();
 
     const containerVariants: Variants = {
@@ -113,16 +112,18 @@ export default function Hero({ onOpenResume }: HeroProps) {
                             variants={itemVariants}
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
-                            <motion.button
+                            <motion.a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                onClick={onOpenResume}
                                 className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white gradient-red shadow-lg hover:shadow-red-500/30 transition-all border border-transparent"
                             >
                                 <FileText size={20} />
                                 <span>{t.hero.viewResume}</span>
                                 <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                            </motion.button>
+                            </motion.a>
 
                             <motion.a
                                 href="#contact"
