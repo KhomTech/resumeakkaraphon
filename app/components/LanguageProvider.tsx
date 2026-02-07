@@ -214,13 +214,13 @@ const translations = {
             },
             smarthealth: {
                 title: 'System Analyst & UX/UI',
-                company: 'Smart Health Service System (Maharat Hospital)',
-                period: '2024',
-                description: 'Spearheaded the digital transformation of a hospital legacy system into a modern Centralized Platform.',
+                company: 'Smart Health Service System (โรงพยาบาลมหาราชนครราชสีมา)',
+                period: '2567',
+                description: 'Consult โดยตรงกับแพทย์เพื่อแก้ปัญหาข้อมูลสูญหายในระบบ Legacy เดิม และออกแบบระบบใหม่ที่มีประสิทธิภาพ',
                 achievements: [
-                    'Requirement: Consulted directly with physicians to address data loss issues in the existing Legacy System',
-                    'Solution Design: Designed a Centralized Platform workflow and user-friendly UX/UI using Figma',
-                    'Documentation: Delivered professional SRS and DFD specifications (Visio) for stakeholder approval'
+                    'Requirement: Consult กับแพทย์โดยตรง เพื่อเจาะลึกปัญหา Data Loss ในระบบ Legacy เดิม',
+                    'Solution Design: ออกแบบ Workflow ของ Centralized Platform และ UX/UI ที่ใช้งานง่ายด้วย Figma',
+                    'Documentation: จัดทำเอกสาร SRS และ DFD (Visio) ระดับมืออาชีพ เพื่อนำไปใช้พัฒนาจริง'
                 ],
                 impact: 'UX/UI',
                 impactLabel: 'Design',
