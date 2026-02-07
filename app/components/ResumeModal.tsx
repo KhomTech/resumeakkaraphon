@@ -62,7 +62,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }} // smooth ease-out-quintish
-                        className="fixed inset-4 md:inset-10 z-50 flex flex-col bg-[var(--bg-primary)] rounded-2xl border border-[var(--border-color)] shadow-2xl overflow-hidden"
+                        className="fixed inset-0 sm:inset-4 md:inset-6 z-[9999] flex flex-col bg-[var(--bg-primary)] sm:rounded-2xl border border-[var(--border-color)] shadow-2xl overflow-hidden"
                         style={{ willChange: 'transform, opacity' }}
                     >
                         {/* Modal Header */}
@@ -123,19 +123,19 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                             {/* Native Iframe - Better for Mobile Scroll/Zoom than Object */}
                             <iframe
                                 src="/resume.pdf"
-                                className="w-full h-full block rounded-lg bg-white"
+                                className="w-full h-full block bg-white"
                                 title="Resume PDF"
                                 style={{ border: 'none' }}
                                 onLoad={() => setIsLoading(false)}
                             />
 
                             {/* Mobile Overlay: Force Open in New Tab if Iframe interaction is poor */}
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden">
+                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden pointer-events-none">
                                 <a
                                     href="/resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-6 py-3 bg-[var(--accent-red)] text-white font-bold rounded-full shadow-xl animate-bounce"
+                                    className="flex items-center gap-2 px-6 py-3 bg-[var(--accent-red)] text-white font-bold rounded-full shadow-xl animate-bounce pointer-events-auto"
                                 >
                                     <ExternalLink size={18} />
                                     Tap to Zoom/Scroll Full PDF

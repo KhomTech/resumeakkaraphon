@@ -108,7 +108,7 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
                                 <img
                                     src={imageSrc}
                                     alt={altText}
-                                    className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl select-none"
+                                    className="w-auto h-auto max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl select-none"
                                     onClick={(e) => e.stopPropagation()}
                                     draggable={false}
                                 />
