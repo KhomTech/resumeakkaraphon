@@ -1,12 +1,9 @@
-'use client';
-
+import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 import { FileText, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 import Image from 'next/image';
 import RealTimeClock from './RealTimeClock';
-import ImageModal from './ImageModal';
-import { useState } from 'react';
 
 /*
   ==============================
@@ -23,7 +20,6 @@ interface HeroProps {
 
 export default function Hero({ onOpenResume }: HeroProps) {
     const { t } = useLanguage();
-    const [isProfileOpen, setIsProfileOpen] = useState(false);
 
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
@@ -162,26 +158,18 @@ export default function Hero({ onOpenResume }: HeroProps) {
                             <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent-red)] to-transparent rounded-[2rem] opacity-20 blur-3xl transform rotate-6 scale-105" />
 
                             {/* Image Container */}
-                            <div
-                                className="relative w-full h-full rounded-[2rem] overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-2xl cursor-zoom-in group"
-                                onClick={() => setIsProfileOpen(true)}
-                            >
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-2xl">
                                 <Image
                                     src="/profile.png"
                                     alt="Profile"
                                     fill
                                     priority
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="object-cover"
                                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                                 />
                                 {/* Better Placeholder */}
                                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--bg-secondary)] -z-10">
                                     <span className="text-9xl font-bold text-[var(--text-primary)] opacity-5">AW</span>
-                                </div>
-
-                                {/* Hover Hint */}
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
-                                    <span className="bg-black/50 text-white backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">Click to Zoom</span>
                                 </div>
                             </div>
 
@@ -205,13 +193,6 @@ export default function Hero({ onOpenResume }: HeroProps) {
                     </motion.div>
                 </div>
             </div >
-
-            {/* Profile Image Zoom Modal */}
-            <ImageModal
-                isOpen={isProfileOpen}
-                onClose={() => setIsProfileOpen(false)}
-                imageSrc="/profile.png"
-            />
         </section >
     );
 }
