@@ -47,57 +47,70 @@ export default function ImageModal({ isOpen, onClose, imageSrc, altText = 'Image
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="relative z-[100]">
+                <div className="relative z-[9999]">
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/90 backdrop-blur-md cursor-pointer"
+                        className="fixed inset-0 bg-black/95 backdrop-blur-sm cursor-zoom-out"
+                        style={{ willChange: 'opacity' }}
                     />
 
                     {/* Controls */}
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="fixed top-4 right-4 z-[102] flex items-center gap-2"
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ delay: 0.1 }}
+                        className="fixed top-6 right-6 z-[10000] flex items-center gap-4"
                     >
-                        <div className="flex items-center gap-1 bg-black/50 backdrop-blur-sm p-1 rounded-full border border-white/10 text-white">
-                            <button onClick={handleZoomOut} className="p-2 hover:bg-white/20 rounded-full transition-colors"><ZoomOut size={20} /></button>
-                            <button onClick={handleReset} className="p-2 hover:bg-white/20 rounded-full transition-colors"><RotateCcw size={18} /></button>
-                            <button onClick={handleZoomIn} className="p-2 hover:bg-white/20 rounded-full transition-colors"><ZoomIn size={20} /></button>
+                        {/* Zoom Controls */}
+                        <div className="hidden md:flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                            <button onClick={handleZoomOut} className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all" title="Zoom Out">
+                                <ZoomOut size={20} />
+                            </button>
+                            <button onClick={handleReset} className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all" title="Reset">
+                                <RotateCcw size={18} />
+                            </button>
+                            <button onClick={handleZoomIn} className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all" title="Zoom In">
+                                <ZoomIn size={20} />
+                            </button>
                         </div>
 
+                        {/* Close Button - Big & Clear */}
                         <button
                             onClick={onClose}
-                            className="p-3 bg-white/10 hover:bg-red-500 rounded-full text-white transition-colors backdrop-blur-sm"
+                            className="group flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium shadow-lg hover:shadow-red-500/30 transition-all transform hover:scale-105"
                         >
-                            <X size={24} />
+                            <span className="text-sm">Close</span>
+                            <div className="bg-white/20 p-1 rounded-full group-hover:bg-white/30 transition-colors">
+                                <X size={18} />
+                            </div>
                         </button>
                     </motion.div>
 
                     {/* Image Container */}
-                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none">
+                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-10 pointer-events-none">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
                             className="relative w-full h-full flex items-center justify-center pointer-events-auto"
                         >
                             <div
-                                className="relative transition-transform duration-200 ease-out"
+                                className="relative transition-transform duration-200 ease-linear origin-center will-change-transform"
                                 style={{ transform: `scale(${scale})` }}
                             >
-                                {/* We use a regular img tag for smoother zooming without Next.js Image wrapper constraints in modal often */}
-                                {/* But Next/Image is fine if we size widely. Let's use img for raw behavior control specifically in zoom modal */}
                                 <img
                                     src={imageSrc}
                                     alt={altText}
-                                    className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                                    className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl select-none"
                                     onClick={(e) => e.stopPropagation()}
+                                    draggable={false}
                                 />
                             </div>
                         </motion.div>
