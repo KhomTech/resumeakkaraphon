@@ -193,28 +193,32 @@ export default function FeaturedProject() {
                 <div className="grid md:grid-cols-2 gap-8">
                     {[
                         {
-                            key: 'smarthealth',
-                            img: '/smart-health.png',
-                            icon: '🏥',
-                            link: null
-                        },
-                        {
                             key: 'shoes',
                             img: '/shoes-store.mp4', // Video loop
                             icon: '👟',
-                            link: null
+                            link: null,
+                            isExternal: false
+                        },
+                        {
+                            key: 'smarthealth',
+                            img: '/smart-health.png',
+                            icon: '🏥',
+                            link: '/sa-document',
+                            isExternal: false
                         },
                         {
                             key: 'pos',
                             img: '/pos-system.jpg',
                             icon: '🏪',
-                            link: null
+                            link: null,
+                            isExternal: false
                         },
                         {
                             key: 'smilehouse',
                             img: '/smile-house.jpg',
                             icon: '🏠',
-                            link: "https://khomtech.github.io/SmileHouseRayong/"
+                            link: "https://khomtech.github.io/SmileHouseRayong/",
+                            isExternal: true
                         }
                     ].map((proj, i) => {
                         // Access translations dynamically
@@ -231,16 +235,7 @@ export default function FeaturedProject() {
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
                                 className="group bg-[var(--bg-card)] rounded-3xl border border-[var(--border-color)] overflow-hidden hover:border-[var(--accent-red)]/50 transition-all duration-300 hover:shadow-lg flex flex-col h-full relative"
                             >
-                                {/* Overlay Link for Whole Card (if clickable) */}
-                                {isLink && (
-                                    <a
-                                        href={proj.link!}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="absolute inset-0 z-10"
-                                        aria-label={`View ${p.title}`}
-                                    />
-                                )}
+                                {/* Removed overlay link - now using explicit button */}
 
                                 <div className="h-64 relative bg-[var(--bg-secondary)] overflow-hidden">
                                     {proj.img.endsWith('.mp4') ? (
@@ -301,6 +296,19 @@ export default function FeaturedProject() {
                                             <span className="text-xs text-[var(--text-secondary)] uppercase tracking-wider">{p.impactLabel}</span>
                                             <span className="text-lg font-bold gradient-text">{p.impact}</span>
                                         </div>
+
+                                        {/* View Details Button (for projects with links) */}
+                                        {isLink && (
+                                            <a
+                                                href={proj.link!}
+                                                target={proj.isExternal ? "_blank" : "_self"}
+                                                rel={proj.isExternal ? "noopener noreferrer" : undefined}
+                                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-red)] text-white text-sm font-medium hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/20"
+                                            >
+                                                <ExternalLink size={14} />
+                                                <span>ดูรายละเอียด</span>
+                                            </a>
+                                        )}
 
                                         {/* Contact Interactive Button */}
                                         <div className="relative z-30">

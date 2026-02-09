@@ -2,11 +2,11 @@
   ==============================
   PORTFOLIO GLOBALS - ULTRA PREMIUM FINTECH
   ==============================
-  Optimized for MAXIMUM SMOOTHNESS & PERFORMANCE
-  - Hardware accelerated animations
-  - Optimized ease curves for natural feel
+  Final Version - Maximum Polish for HR Appeal
+  - Ultra smooth 60fps animations
+  - Premium micro-interactions
   - Clean, high-contrast typography
-  - "No-Lag" Glassmorphism (optimized backdrop-filter)
+  - Elegant glassmorphism
 */
 
 @import "tailwindcss";
@@ -21,17 +21,18 @@
   --text-secondary: #64748b;
   --accent-red: #dc2626;
   --border-color: #e2e8f0;
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  /* Less transparency = faster render */
+  --glass-bg: rgba(255, 255, 255, 0.9);
 
-  /* Refined Shadows - Softer & Cleaner */
+  /* Premium Shadows */
   --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 25px rgba(220, 38, 38, 0.15);
+  --shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(220, 38, 38, 0.2);
+  --shadow-glow-strong: 0 0 60px rgba(220, 38, 38, 0.35);
 }
 
 .dark {
-  /* Dark mode - Deep, Rich, Opaque (Better contrast) */
+  /* Dark mode - Deep, Rich, Premium */
   --bg-primary: #050505;
   --bg-secondary: #0a0a0a;
   --bg-card: #111111;
@@ -39,11 +40,13 @@
   --text-secondary: #a1a1aa;
   --accent-red: #e11d48;
   --border-color: #27272a;
-  --glass-bg: rgba(10, 10, 10, 0.85);
+  --glass-bg: rgba(10, 10, 10, 0.9);
 
-  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 12px 24px -6px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 35px rgba(225, 29, 72, 0.25);
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 0 50px rgba(225, 29, 72, 0.3);
+  --shadow-glow-strong: 0 0 80px rgba(225, 29, 72, 0.5);
 }
 
 /* ===== BASE OPTIMIZATIONS ===== */
@@ -53,97 +56,202 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
   color: var(--text-primary);
   background: var(--bg-primary);
-  /* Prioritize Prompt for that modern Thai app feel, falling back to Inter */
   font-family: var(--font-prompt), var(--font-inter), system-ui, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
-  /* Hardware acceleration trigger for whole page to prevent paint flashing */
-  transform: translateZ(0);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Optimization for touch devices - removes tap delay */
+/* Remove tap delay on touch devices */
 a,
 button {
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* ===== PERFORMANCE UTILITIES ===== */
+/* Selection styling */
+::selection {
+  background: rgba(220, 38, 38, 0.2);
+  color: var(--text-primary);
+}
 
-/* GPU Accelerated Glass - Reduced blur for better FPS */
-/* GPU Accelerated Glass - Reduced blur (8px) for better FPS on mobile */
+/* ===== GLASSMORPHISM ===== */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
-  /* Removed aggressive will-change to prevent memory overhead */
 }
 
-/* Ultra Smooth Gradient Text */
+/* ===== GRADIENT TEXT - Premium Look ===== */
 .gradient-text {
-  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-red) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent-red) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding-bottom: 0.1em;
-  transform: translateZ(0);
-  /* Anti-aliasing hint */
 }
 
-/* High Performance Button Gradient */
+/* ===== GRADIENT BUTTON - Premium Red ===== */
 .gradient-red {
   background: linear-gradient(135deg, var(--accent-red) 0%, #be123c 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  transform: translateZ(0);
-  /* Force GPU */
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Smooth Card Hover (Scale & Lift) - Optimized Bezier */
+.gradient-red::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #be123c 0%, var(--accent-red) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.gradient-red:hover::before {
+  opacity: 1;
+}
+
+.gradient-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -8px rgba(220, 38, 38, 0.5);
+}
+
+/* ===== CARD HOVER - Ultra Smooth ===== */
 .card-hover {
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
     border-color 0.3s ease;
-  will-change: transform, box-shadow;
+  will-change: transform;
   backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px) translateZ(0);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-lg);
   border-color: var(--accent-red);
 }
 
-/* ===== SCROLLBAR ===== */
+/* ===== LINK HOVER EFFECT ===== */
+.link-hover {
+  position: relative;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-red);
+  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* ===== GLOW EFFECTS ===== */
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.shadow-glow:hover {
+  box-shadow: var(--shadow-glow-strong);
+}
+
+/* ===== PULSE ANIMATION - Smooth ===== */
+@keyframes pulse-smooth {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.pulse-smooth {
+  animation: pulse-smooth 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===== SHIMMER EFFECT ===== */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== PREMIUM SCROLLBAR ===== */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 5px;
-  border: 2px solid var(--bg-primary);
+  background: linear-gradient(180deg, var(--border-color), var(--text-secondary));
+  border-radius: 10px;
+  border: 2px solid var(--bg-secondary);
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  background: linear-gradient(180deg, var(--accent-red), #be123c);
 }
 
-/* ===== NAVIGATION PILL ===== */
+/* ===== NAVIGATION ===== */
 .nav-pill-active {
   background: var(--bg-secondary);
   color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ===== CONTAINER ===== */
@@ -158,4 +266,82 @@ button {
   .container-custom {
     padding: 0 2rem;
   }
+}
+
+/* ===== FOCUS STATES - Accessibility ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== IMAGE HOVER ZOOM ===== */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.img-zoom:hover {
+  transform: scale(1.08);
+}
+
+/* ===== BUTTON PRESS EFFECT ===== */
+.btn-press {
+  transition: transform 0.15s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* ===== STAGGER ANIMATION DELAYS ===== */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+/* ===== BORDER GLOW ON HOVER ===== */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--accent-red), transparent, var(--accent-red));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.border-glow:hover::before {
+  opacity: 0.5;
+}
+
+/* ===== TEXT BALANCE ===== */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }

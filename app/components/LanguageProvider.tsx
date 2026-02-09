@@ -34,7 +34,8 @@ const translations = {
             description: 'Third-year Mathematics & Computer Science student passionate about Fintech. Dedicated to building full-stack solutions that solve real problems.',
             viewResume: 'View Resume',
             contactMe: 'Contact Me',
-            availability: 'Internship Availability: (11 Months) 5 May 2026 - March 2027',
+            availability: 'Internship Ready: (11 Months) May 2026 - Mar 2027',
+            urgency: 'Actively seeking opportunities — Feb-Mar 2026',
         },
         // Featured Project
         featured: {
@@ -88,18 +89,18 @@ const translations = {
                 stack: 'Next.js | Line API | Tailwind'
             },
             smarthealth: {
-                title: 'System Analyst & UX/UI',
-                company: 'Smart Health Service System (Maharat Hospital)',
+                title: 'System Analyst & UX/UI Designer',
+                company: 'Smart Health Service System (Maharat Nakhon Ratchasima Hospital)',
                 period: '2024',
-                description: 'Spearheaded the digital transformation of a hospital legacy system into a modern Centralized Platform.',
+                description: 'Full System Analysis & Design for hospital legacy system transformation. Consulted directly with physicians to understand real problems and delivered comprehensive SA documentation.',
                 achievements: [
-                    'Requirement: Consulted directly with physicians to address data loss issues in the existing Legacy System',
-                    'Solution Design: Designed a Centralized Platform workflow and user-friendly UX/UI using Figma',
-                    'Documentation: Delivered professional SRS and DFD specifications (Visio) for stakeholder approval'
+                    '📋 13+ SA Documents: Use Case, Class Diagram, DFD Level 0-2, Activity, Sequence, SRS',
+                    '🗄️ Database Design: ER-Diagram, Relational Schema, Normalization, Data Dictionary',
+                    '🎨 UX/UI Prototype: Professional wireframes & mockups in Figma'
                 ],
-                impact: 'UX/UI',
-                impactLabel: 'Design',
-                stack: 'Visio | Figma | System Analysis | DFD/SRS'
+                impact: '17+ Docs',
+                impactLabel: 'SA Deliverables',
+                stack: 'Figma | Visio | SA/DFD/SRS | ER-Diagram'
             },
             shoes: {
                 title: 'Full-Stack Developer',
@@ -161,7 +162,8 @@ const translations = {
             description: 'นักศึกษาชั้นปีที่ 3 สาขาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ ที่หลงใหลในโลก Fintech และการพัฒนา Software มุ่งมั่นสร้าง Solutions ที่ใช้งานได้จริงและทรงพลัง',
             viewResume: 'ดูเรซูเม่',
             contactMe: 'ติดต่อร่วมงาน',
-            availability: 'พร้อมเริ่มฝึกงาน (11 เดือน): 5 พ.ค. 2569 - มี.ค. 2570',
+            availability: 'พร้อมเริ่มสหกิจ/ฝึกงาน (11 เดือน): 5 พ.ค. 2569 - มี.ค. 2570',
+            urgency: 'กำลังหาที่สหกิจ/ฝึกงาน — ภายใน ก.พ.-มี.ค. 2569',
         },
         // Featured Project
         featured: {
@@ -215,18 +217,18 @@ const translations = {
                 stack: 'Next.js | Line API | Tailwind'
             },
             smarthealth: {
-                title: 'System Analyst & UX/UI',
+                title: 'System Analyst & UX/UI Designer',
                 company: 'Smart Health Service System (โรงพยาบาลมหาราชนครราชสีมา)',
                 period: '2567',
-                description: 'Consult โดยตรงกับแพทย์เพื่อแก้ปัญหาข้อมูลสูญหายในระบบ Legacy เดิม และออกแบบระบบใหม่ที่มีประสิทธิภาพ',
+                description: 'วิเคราะห์และออกแบบระบบ Smart Health ทั้งหมด โดย Consult ตรงกับแพทย์จริง เพื่อแก้ปัญหา Legacy System และส่งมอบเอกสาร SA ระดับมืออาชีพ',
                 achievements: [
-                    'Requirement: Consult กับแพทย์โดยตรง เพื่อเจาะลึกปัญหา Data Loss ในระบบ Legacy เดิม',
-                    'Solution Design: ออกแบบ Workflow ของ Centralized Platform และ UX/UI ที่ใช้งานง่ายด้วย Figma',
-                    'Documentation: จัดทำเอกสาร SRS และ DFD (Visio) ระดับมืออาชีพ เพื่อนำไปใช้พัฒนาจริง'
+                    '📋 เอกสาร SA 13+ ชิ้น: Use Case, Class Diagram, DFD Level 0-2, Activity, Sequence, SRS',
+                    '🗄️ ออกแบบ Database: ER-Diagram, Relational Schema, Normalization, Data Dictionary',
+                    '🎨 UX/UI Prototype: Wireframe & Mockup ระดับมืออาชีพด้วย Figma'
                 ],
-                impact: 'UX/UI',
-                impactLabel: 'Design',
-                stack: 'Visio | Figma | System Analysis | DFD/SRS'
+                impact: '17+ เอกสาร',
+                impactLabel: 'SA Deliverables',
+                stack: 'Figma | Visio | SA/DFD/SRS | ER-Diagram'
             },
             shoes: {
                 title: 'Full-Stack Developer',

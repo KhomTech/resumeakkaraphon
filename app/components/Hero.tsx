@@ -59,19 +59,31 @@ export default function Hero({ }: HeroProps) {
                         animate="visible"
                         className="text-center lg:text-left"
                     >
-                        {/* Availability Badge & Clock */}
-                        <motion.div variants={itemVariants} className="flex flex-col md:flex-row items-center md:items-center gap-6 mb-10">
-                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-sm font-medium border border-[var(--border-color)]">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                </span>
-                                {t.hero.availability}
-                            </span>
+                        {/* Availability Zone - Premium Design */}
+                        <motion.div variants={itemVariants} className="mb-10">
+                            {/* Top Row: Availability + Clock */}
+                            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-8">
+                                {/* Availability Badge with Glow */}
+                                <div className="flex flex-col items-center lg:items-start gap-3">
+                                    <span className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-600 dark:text-green-400 text-sm font-semibold border border-green-500/30 shadow-sm">
+                                        <span className="relative flex h-2.5 w-2.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                        </span>
+                                        {t.hero.availability}
+                                    </span>
 
-                            {/* Real-time Clock */}
-                            <div className="scale-90 origin-left">
-                                <RealTimeClock />
+                                    {/* Urgency Tag */}
+                                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-500/10 to-orange-500/10 text-[var(--accent-red)] text-xs font-bold border border-red-500/30 animate-pulse">
+                                        <span>🔥</span>
+                                        {t.hero.urgency}
+                                    </span>
+                                </div>
+
+                                {/* Real-time Clock */}
+                                <div className="lg:ml-auto">
+                                    <RealTimeClock />
+                                </div>
                             </div>
                         </motion.div>
 
@@ -112,18 +124,17 @@ export default function Hero({ }: HeroProps) {
                             variants={itemVariants}
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
-                            <motion.a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white gradient-red shadow-lg hover:shadow-red-500/30 transition-all border border-transparent"
-                            >
-                                <FileText size={20} />
-                                <span>{t.hero.viewResume}</span>
-                                <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                            </motion.a>
+                            <Link href="/resume">
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white gradient-red shadow-lg hover:shadow-red-500/30 transition-all border border-transparent cursor-pointer"
+                                >
+                                    <FileText size={20} />
+                                    <span>{t.hero.viewResume}</span>
+                                    <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                                </motion.div>
+                            </Link>
 
                             <motion.a
                                 href="#contact"

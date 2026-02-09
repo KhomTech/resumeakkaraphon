@@ -30,9 +30,6 @@ import Contact from './components/Contact';
 */
 
 export default function Home() {
-  // State for resume modal
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
-
   return (
     <main className="min-h-screen">
       {/* Sticky Navigation Header */}
