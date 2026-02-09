@@ -200,17 +200,17 @@ export default function FeaturedProject() {
                             isExternal: false
                         },
                         {
+                            key: 'pos',
+                            img: '/pos-system.jpg',
+                            icon: '🏪',
+                            link: '/pos-document',
+                            isExternal: false
+                        },
+                        {
                             key: 'smarthealth',
                             img: '/smart-health.png',
                             icon: '🏥',
                             link: '/sa-document',
-                            isExternal: false
-                        },
-                        {
-                            key: 'pos',
-                            img: '/pos-system.jpg',
-                            icon: '🏪',
-                            link: null,
                             isExternal: false
                         },
                         {
@@ -306,7 +306,7 @@ export default function FeaturedProject() {
                                                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-red)] text-white text-sm font-medium hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/20"
                                             >
                                                 <ExternalLink size={14} />
-                                                <span>ดูรายละเอียด</span>
+                                                <span>{t.featured.viewDetails || 'ดูรายละเอียด'}</span>
                                             </a>
                                         )}
 
