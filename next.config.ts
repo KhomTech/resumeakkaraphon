@@ -5,17 +5,22 @@ import type { NextConfig } from "next";
   NEXT.JS CONFIGURATION
   ==============================
   - Enables external images from devicon CDN for skill icons
-  - Configures image optimization settings
+  - Conditionally configures static export for GitHub Pages
+  - Vercel deploys work without any special config
 */
 
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
-  // Static export for GitHub Pages
-  output: 'export',
-  basePath: '/resumeakkaraphon',
-  assetPrefix: '/resumeakkaraphon/',
+  // Static export + basePath only for GitHub Pages
+  ...(isGitHubPages && {
+    output: 'export',
+    basePath: '/resumeakkaraphon',
+    assetPrefix: '/resumeakkaraphon/',
+  }),
   // Allow external images from CDN
   images: {
-    unoptimized: true,
+    unoptimized: isGitHubPages,
     remotePatterns: [
       {
         protocol: 'https',
@@ -24,10 +29,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Improve performance
-  // experimental: {
-  //   optimizeCss: true,
-  // },
 };
 
 export default nextConfig;
+
