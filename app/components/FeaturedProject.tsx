@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Code, Database, Cpu, Mail, BarChart2, Copy, Check, Server, Container } from 'lucide-react';
+import { ExternalLink, Github, Layers, Code, Database, Cpu, Mail, BarChart2, Copy, Check, Server, Container, Globe } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from './LanguageProvider';
 import Image from 'next/image';
@@ -220,8 +220,14 @@ export default function FeaturedProject() {
                             link: "https://khomtech.github.io/SmileHouseRayong/",
                             isExternal: true,
                             extraLinks: [
-                                { label: 'Website', href: 'https://khomtech.github.io/SmileHouseRayong/', icon: '🌐' },
-                                { label: 'TikTok', href: 'https://www.tiktok.com/@smilehouserayong', icon: '🎵' },
+                                { label: 'Website', href: 'https://khomtech.github.io/SmileHouseRayong/', icon: <Globe size={14} /> },
+                                {
+                                    label: 'TikTok', href: 'https://www.tiktok.com/@smilehouserayong', icon: (
+                                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 1 0 7.7 6.38V8.63a7.51 7.51 0 0 0 1.53.15 7.55 7.55 0 0 0 4.6-1.55v-3.72a4.42 4.42 0 0 1-4.6 3.18Z" />
+                                        </svg>
+                                    )
+                                },
                             ]
                         }
                     ].map((proj, i) => {
@@ -304,7 +310,7 @@ export default function FeaturedProject() {
                                         {/* View Details Button(s) */}
                                         {'extraLinks' in proj && proj.extraLinks ? (
                                             <div className="flex gap-2">
-                                                {proj.extraLinks.map((el: { label: string; href: string; icon: string }, idx: number) => (
+                                                {proj.extraLinks.map((el: { label: string; href: string; icon: React.ReactNode }, idx: number) => (
                                                     <a
                                                         key={idx}
                                                         href={el.href}
@@ -312,7 +318,9 @@ export default function FeaturedProject() {
                                                         rel="noopener noreferrer"
                                                         className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-[var(--accent-red)] text-white text-xs font-medium hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/20"
                                                     >
-                                                        <span>{el.icon}</span>
+                                                        <span>
+                                                            {el.icon}
+                                                        </span>
                                                         <span>{el.label}</span>
                                                     </a>
                                                 ))}
