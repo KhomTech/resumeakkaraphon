@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 import { FileText, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
@@ -14,10 +13,7 @@ import RealTimeClock from './RealTimeClock';
   - Elegant interactions
 */
 
-interface HeroProps {
-}
-
-export default function Hero({ }: HeroProps) {
+export default function Hero() {
     const { t } = useLanguage();
 
     const containerVariants: Variants = {
@@ -124,17 +120,18 @@ export default function Hero({ }: HeroProps) {
                             variants={itemVariants}
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                         >
-                            <Link href="/resume">
-                                <motion.div
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white gradient-red shadow-lg hover:shadow-red-500/30 transition-all border border-transparent cursor-pointer"
-                                >
-                                    <FileText size={20} />
-                                    <span>{t.hero.viewResume}</span>
-                                    <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                                </motion.div>
-                            </Link>
+                            <motion.a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold text-white gradient-red shadow-lg hover:shadow-red-500/30 transition-all border border-transparent cursor-pointer"
+                            >
+                                <FileText size={20} />
+                                <span>{t.hero.viewResume}</span>
+                                <ArrowRight size={16} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                            </motion.a>
 
                             <motion.a
                                 href="#contact"
@@ -152,9 +149,9 @@ export default function Hero({ }: HeroProps) {
                         </motion.div>
 
                         {/* Location */}
-                        <motion.div variants={itemVariants} className="mt-12 flex items-center lg:items-start gap-2 text-[var(--text-secondary)] opacity-60 hover:opacity-100 transition-opacity">
-                            <MapPin size={16} />
-                            <span className="text-sm">Bangkok, Thailand</span>
+                        <motion.div variants={itemVariants} className="mt-12 flex items-center justify-center lg:justify-start gap-2 text-[var(--text-secondary)] opacity-60 hover:opacity-100 transition-opacity">
+                            <MapPin size={16} className="flex-shrink-0" />
+                            <span className="text-sm">{t.contact.location}</span>
                         </motion.div>
                     </motion.div>
 

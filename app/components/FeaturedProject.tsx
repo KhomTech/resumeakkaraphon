@@ -218,7 +218,11 @@ export default function FeaturedProject() {
                             img: '/smile-house.jpg',
                             icon: '🏠',
                             link: "https://khomtech.github.io/SmileHouseRayong/",
-                            isExternal: true
+                            isExternal: true,
+                            extraLinks: [
+                                { label: 'Website', href: 'https://khomtech.github.io/SmileHouseRayong/', icon: '🌐' },
+                                { label: 'TikTok', href: 'https://www.tiktok.com/@smilehouserayong', icon: '🎵' },
+                            ]
                         }
                     ].map((proj, i) => {
                         // Access translations dynamically
@@ -297,8 +301,23 @@ export default function FeaturedProject() {
                                             <span className="text-lg font-bold gradient-text">{p.impact}</span>
                                         </div>
 
-                                        {/* View Details Button (for projects with links) */}
-                                        {isLink && (
+                                        {/* View Details Button(s) */}
+                                        {'extraLinks' in proj && proj.extraLinks ? (
+                                            <div className="flex gap-2">
+                                                {proj.extraLinks.map((el: { label: string; href: string; icon: string }, idx: number) => (
+                                                    <a
+                                                        key={idx}
+                                                        href={el.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-[var(--accent-red)] text-white text-xs font-medium hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/20"
+                                                    >
+                                                        <span>{el.icon}</span>
+                                                        <span>{el.label}</span>
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        ) : isLink && (
                                             <a
                                                 href={proj.link!}
                                                 target={proj.isExternal ? "_blank" : "_self"}

@@ -79,10 +79,11 @@ const translations = {
                 title: 'Web Developer & Digital Marketing',
                 company: 'Smile House Rayong (Rental Property)',
                 period: '2025',
-                description: 'Responsive real estate platform with integrated Line OA for automated lead generation. Achieved 100%+ online growth.',
+                description: 'Built a responsive real estate website from scratch with SEO optimization, Line OA chatbot integration for automated lead capture, and TikTok content marketing strategy. Drove 100%+ growth in online inquiries.',
                 achievements: [
-                    'End-to-end SEO & content strategy',
-                    'Automated lead generation pipeline',
+                    'End-to-end SEO & content strategy + TikTok marketing',
+                    'Automated lead generation via Line OA chatbot',
+                    'Responsive design with Next.js & Tailwind CSS',
                 ],
                 impact: '100%+',
                 impactLabel: 'Growth',
@@ -129,12 +130,12 @@ const translations = {
         },
         // Contact
         contact: {
-            title: "Let's Connect",
+            title: "Let's Work Together",
             subtitle: 'Open for internship opportunities in Software Engineering & Fintech',
             email: 'Email Me',
             github: 'GitHub',
             linkedin: 'LinkedIn',
-            location: 'Bangkok, Thailand',
+            location: 'Bangkok, Thailand — Willing to relocate near your office',
         },
         // Resume Modal
         resume: {
@@ -161,7 +162,7 @@ const translations = {
             subtitle: '(นักศึกษาฝึกงาน)',
             description: 'นักศึกษาชั้นปีที่ 3 สาขาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ ที่หลงใหลในโลก Fintech และการพัฒนา Software มุ่งมั่นสร้าง Solutions ที่ใช้งานได้จริงและทรงพลัง',
             viewResume: 'ดูเรซูเม่',
-            contactMe: 'ติดต่อร่วมงาน',
+            contactMe: 'ติดต่อผม',
             availability: 'พร้อมเริ่มสหกิจ/ฝึกงาน (11 เดือน): 5 พ.ค. 2569 - มี.ค. 2570',
             urgency: 'กำลังหาที่สหกิจ/ฝึกงาน — ภายใน ก.พ.-มี.ค. 2569',
         },
@@ -207,10 +208,11 @@ const translations = {
                 title: 'Web Developer & Digital Marketing',
                 company: 'Smile House Rayong (อสังหาริมทรัพย์)',
                 period: '2568',
-                description: 'แพลตฟอร์มอสังหาฯ Responsive พร้อมเชื่อมต่อ Line OA สำหรับการสร้าง Lead อัตโนมัติ เพิ่มยอดผู้สนใจกว่า 100%',
+                description: 'สร้างเว็บไซต์อสังหาฯ Responsive ตั้งแต่ศูนย์ พร้อม SEO, Line OA Chatbot สำหรับจับ Lead อัตโนมัติ และวางกลยุทธ์ TikTok Marketing เพิ่มยอดผู้สนใจกว่า 100%',
                 achievements: [
-                    'SEO & Content Strategy ครบวงจร',
-                    'ระบบ Lead Generation อัตโนมัติ',
+                    'SEO & Content Strategy ครบวงจร + TikTok Marketing',
+                    'ระบบจับ Lead อัตโนมัติผ่าน Line OA Chatbot',
+                    'ออกแบบ Responsive ด้วย Next.js & Tailwind CSS',
                 ],
                 impact: '100%+',
                 impactLabel: 'เติบโต',
@@ -257,12 +259,12 @@ const translations = {
         },
         // Contact
         contact: {
-            title: 'ร่วมงานกันไหม?',
-            subtitle: 'ผมพร้อมเสมอสำหรับโอกาสฝึกงานที่ท้าทายในสาย Software Engineer และ Fintech',
+            title: 'พร้อมร่วมงาน',
+            subtitle: 'พร้อมสำหรับโอกาสฝึกงานที่ท้าทายในสาย Software Engineer และ Fintech',
             email: 'ส่งอีเมลหาผม',
             github: 'ดู Code ที่ GitHub',
             linkedin: 'LinkedIn Profile',
-            location: 'กรุงเทพมหานคร',
+            location: 'กรุงเทพฯ — พร้อมย้ายใกล้บริษัทเพื่อความสะดวก',
         },
         // Resume Modal
         resume: {

@@ -9,8 +9,13 @@ import type { NextConfig } from "next";
 */
 
 const nextConfig: NextConfig = {
+  // Static export for GitHub Pages
+  output: 'export',
+  basePath: '/resumeakkaraphon',
+  assetPrefix: '/resumeakkaraphon/',
   // Allow external images from CDN
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
